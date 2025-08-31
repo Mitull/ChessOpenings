@@ -1,3 +1,8 @@
+<div class="chess-board-wrapper">
+
+<div id="chess-board-container" >
+  <!-- Your chess board rendering here -->
+
 <div class="chess-board" [ngClass]="{'rotated': flipMode}">
     <div *ngFor="let row of chessBoardView; let x = index" class="row">
         <div *ngFor="let piece of row; let y = index" class="square" [ngClass]="{'dark': isSquareDark(x, y), 
@@ -21,6 +26,9 @@
 
 
 </div>
+</div>
+</div>
+
 
 <button (click)="flipBoard()">Flip</button>
 

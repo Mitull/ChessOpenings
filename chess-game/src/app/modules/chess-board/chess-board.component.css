@@ -1,9 +1,9 @@
 .chess-board {
-    display: flex;
-    justify-content: center;
-    flex-direction: column-reverse;
-    width: 480px;
-    height: 480px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
 }
 
 .rotated {
@@ -13,14 +13,37 @@
 .row {
     display: flex;
     flex-direction: row;
+    width: 100%;
+    flex: 1 1 0; /* Make all rows share space equally */
+    /* Remove height: 100%; */
+}
+
+.chess-board-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* or set to the desired height */
+  width: 100vw;  /* or set to the desired width */
+}
+
+#chess-board-container {
+  min-width: 200px;
+  min-height: 200px;
+  max-width: 1000px;
+  max-height: 1000px;
+  border: 2px solid #333;
+  overflow: hidden; /* Hide scrollbars */
+  position: relative;
+  resize: both;
+  aspect-ratio: 1 / 1; /* Force square shape */
 }
 
 .square {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 60px;
-    width: 60px;
+    flex: 1 1 0; /* Make all squares share space equally */
+    aspect-ratio: 1 / 1;
     cursor: pointer;
     border: 1px solid white;
     background-color: white;
